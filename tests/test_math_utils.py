@@ -1,6 +1,6 @@
 import pytest
 from src.math_utils import multiply
-
+import requests
 
 @pytest.mark.parametrize(
     'num1, num2, result',
