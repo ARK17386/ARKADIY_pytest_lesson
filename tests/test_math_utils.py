@@ -1,16 +1,10 @@
 import pytest
+
 from src.math_utils import multiply
-import requests
+
 
 @pytest.mark.parametrize(
-    'num1, num2, result',
-    [
-        (2, 2, 4),
-        (3, 5, 15),
-        (-3, 5, -15),
-        (-3, -5, 15)
-    ]
+    ("num1", "num2", "result"), [(2, 2, 4), (3, 5, 15), (-3, 5, -15), (-3, -5, 15)]
 )
 def test_multiply(num1, num2, result):
-    assert multiply(num1, num2) == result, 'Функция отработала неправильно'
-
+    assert multiply(num1, num2) == result, "Функция отработала неправильно"
