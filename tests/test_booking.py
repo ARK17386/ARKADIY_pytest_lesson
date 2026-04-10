@@ -6,21 +6,19 @@ def test_create_booking(created_booking):
     try:
         parsed = CreateBookingResponse(**created_booking)
     except Exception as e:
-        raise AssertionError(f'Структура ответа не соответствует данным: {e}')
+        raise AssertionError(f"Структура ответа не соответствует данным: {e}")
 
-    assert parsed.booking.bookingdates.checkin == '2026-01-01'
+    assert parsed.booking.bookingdates.checkin == "2026-01-01"
 
-
-
-    assert created_booking['booking']['firstname'] == BookingData.FIRSTNAME.value, (
-        'Вернулось некорректное имя\n'
+    assert created_booking["booking"]["firstname"] == BookingData.FIRSTNAME.value, (
+        "Вернулось некорректное имя\n"
         f'Response: {created_booking["booking"]["firstname"]}\n'
-        f'Ожидаемое имя: {BookingData.FIRSTNAME.value}'
+        f"Ожидаемое имя: {BookingData.FIRSTNAME.value}"
     )
-    assert created_booking['booking']['lastname'] == BookingData.LASTNAME.value, (
-        'Вернулась некорректная фамилия\n'
+    assert created_booking["booking"]["lastname"] == BookingData.LASTNAME.value, (
+        "Вернулась некорректная фамилия\n"
         f'Response: {created_booking["booking"]["lastname"]}\n'
-        f'Ожидаемое имя: {BookingData.LASTNAME.value}'
+        f"Ожидаемое имя: {BookingData.LASTNAME.value}"
     )
 
 
