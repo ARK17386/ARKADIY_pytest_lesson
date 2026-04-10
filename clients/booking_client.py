@@ -18,7 +18,7 @@ class BookingClient:
     def get_token(self) -> requests.Response:
         return requests.post(
             url=f"{self.base_url}/auth",
-            json={"username": "admin", "password": settings.password},
+            json={"username": settings.username, "password": settings.password},
         )
 
     def update_booking(self, booking_id: int, headers: dict, data) -> requests.Response:
